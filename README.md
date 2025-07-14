@@ -22,6 +22,64 @@ An intelligent research assistant that transforms user queries into comprehensiv
 - **Data Validation**: Pydantic for schema management
 - **Hosting**: Hugging Face Spaces
 
+## 🧪 Development
+
+This project uses modern Python development tools to ensure code quality and consistency.
+
+### Pre-commit Hooks
+
+The project is configured with pre-commit hooks that automatically run code quality checks before each commit:
+
+- **Ruff**: Fast Python linter and formatter
+- **Pytest**: Automatic test execution
+- **File validation**: YAML, JSON, TOML syntax checking
+- **Code cleanup**: Trailing whitespace removal, end-of-file fixes
+
+### Manual Development Commands
+
+```bash
+# Manual runs (optional)
+uv run ruff check . --fix     # Run linting with auto-fix
+uv run ruff format .          # Format code
+uv run pytest               # Run tests
+uv run pre-commit run --all-files  # Run all hooks
+
+# Automatic runs
+git commit -m "message"      # Hooks run automatically before commit
+```
+
+#### Command Explanations:
+
+- **`uv run ruff check . --fix`**: Analyzes your Python code for style issues, potential bugs, and automatically fixes problems like unused imports, spacing issues, and import sorting
+- **`uv run ruff format .`**: Formats your code consistently with proper indentation, line length (88 chars), and quote style (double quotes)
+- **`uv run pytest`**: Runs all tests in the `tests/` directory to ensure your changes don't break existing functionality
+- **`uv run pre-commit run --all-files`**: Manually runs all configured hooks on every file in the project
+- **`git commit -m "message"`**: When you commit, pre-commit hooks automatically run and must pass before the commit succeeds
+
+### Testing
+
+```bash
+# Unit tests
+pytest tests/unit/
+
+# Integration tests
+pytest tests/integration/
+
+# All tests with coverage
+pytest --cov=src tests/
+
+# Run tests in verbose mode
+pytest -v
+```
+
+### Code Quality Standards
+
+- **Line length**: 88 characters maximum
+- **Quote style**: Double quotes for strings
+- **Import sorting**: Automatic with ruff
+- **Type hints**: Encouraged for better code documentation
+- **Documentation**: Docstrings for all public functions and classes
+
 ## 📋 Requirements
 
 - Python 3.12.9
@@ -130,20 +188,7 @@ The application features a clean, intuitive Gradio interface with:
 - **Secure API Handling**: API keys managed through environment variables
 - **Anonymous Usage**: No user registration or personal data collection required
 
-## 🧪 Testing
 
-Run the test suite:
-
-```bash
-# Unit tests
-pytest tests/unit/
-
-# Integration tests
-pytest tests/integration/
-
-# All tests with coverage
-pytest --cov=src tests/
-```
 
 ## 📈 Performance
 
