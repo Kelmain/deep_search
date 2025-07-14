@@ -1,5 +1,5 @@
 # Core dependencies for Agentic Deep Search App
-gradio>=4.0.0
+gradio>=5.0.0
 langchain>=0.1.0
 langchain-community
 duckduckgo-search
@@ -7,13 +7,9 @@ openai
 pydantic>=2.0.0
 python-dotenv
 
-# Additional utilities
-requests
-beautifulsoup4
-markdown
 
 # Development dependencies
 pytest
 pytest-asyncio
-black
-flake8 
+ruff
+pre-commit
