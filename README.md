@@ -110,9 +110,43 @@ pytest -v
 4. **Configure environment variables**
    Create a `.env` file in the project root:
    ```env
-   OPENAI_API_KEY=your_gemini_api_key_here
+   GEMINI_API_KEY=your_gemini_api_key_here
    DEBUG=false
    LOG_LEVEL=INFO
+   ```
+
+   **Environment Variable Explanations:**
+
+   - **`GEMINI_API_KEY`**: Your Gemini 2.5 Flash API key (required for AI functionality)
+
+   - **`DEBUG`**: Development mode flag
+     - `true`: Development mode - verbose errors, hot reload, detailed logging
+     - `false`: Production mode - user-friendly errors, performance optimized
+
+   - **`LOG_LEVEL`**: Controls logging verbosity
+     - `DEBUG`: Most verbose - shows all debug traces and messages
+     - `INFO`: Standard level - shows informational messages and above (recommended)
+     - `WARNING`: Shows only warnings, errors, and critical messages
+     - `ERROR`: Shows only errors and critical system failures
+     - `CRITICAL`: Shows only critical system failures
+
+   **Configuration Examples:**
+
+   ```bash
+   # Development environment
+   DEBUG=true
+   LOG_LEVEL=DEBUG
+   GEMINI_API_KEY=your_api_key_here
+
+   # Production environment
+   DEBUG=false
+   LOG_LEVEL=INFO
+   GEMINI_API_KEY=your_api_key_here
+
+   # Troubleshooting environment
+   DEBUG=false
+   LOG_LEVEL=WARNING
+   GEMINI_API_KEY=your_api_key_here
    ```
 
 5. **Run the application**
@@ -154,8 +188,6 @@ deep_search/
 ├── app.py                  # Main Gradio application
 ├── requirements.txt        # Python dependencies
 ├── README.md              # This file
-├── prd.md                 # Product Requirements Document
-├── plan.md                # Development Plan
 └── .gitignore             # Git ignore patterns
 ```
 
@@ -213,16 +245,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - **Issues**: Report bugs and request features via GitHub Issues
 - **Documentation**: Comprehensive guides available in the `/docs` folder
-- **Community**: Join discussions in the project's community forums
 
 ## 🗺️ Roadmap
 
 - [ ] Enhanced source credibility scoring
-- [ ] Multi-language support for international research
 - [ ] Integration with academic databases
 - [ ] Advanced visualization options
 - [ ] Collaboration features for team research
-
----
-
-Built with ❤️ for researchers, analysts, and curious minds everywhere.
