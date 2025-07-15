@@ -1,5 +1,7 @@
-.deep_search
+.venv
+.pytest_cache
+.ruff_cache
 .env
 __pycache__
 .DS_Storeplan.md
-prd.md
+.gradio
